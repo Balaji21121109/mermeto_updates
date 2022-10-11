@@ -1,9 +1,61 @@
+<div class="wizaah-richtext center">
+  <div class="caption-{{ section.id }}">{{ section.settings.caption_text }}</div>
+  <h2 class="heading-{{ section.id }}">{{ section.settings.heading_text }}</h2>
+</div>
+
+{% style %}
+  .caption-{{ section.id }} {
+    color: {{ section.settings.caption_text_color }};
+  }
+  .heading-{{ section.id }} {
+    color: {{ section.settings.heading_text_color }};
+  }
+{% endstyle %}
 
 
 {% schema %}
 {
-    name:"wizahh",
-    tag:"fef",
-    
-    
+  "name": "Wizaah Demo",
+  "tag": "section",
+  "class": "section wizaah-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Caption settings"
+    },
+    {
+      "type": "text",
+      "id": "caption_text",
+      "label": "Text",
+      "default": "Caption text goes here"
+    },
+    {
+      "type": "color",
+      "id": "caption_text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "header",
+      "content": "Heading settings"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Text",
+      "default": "Heading text goes here"
+    },
+    {
+      "type": "color",
+      "id": "heading_text_color",
+      "label": "Text color",
+      "default": "#313131"
     }
+  ],
+  "presets": [
+    {
+      "name": "Wizaah Demo"
+    }
+  ]
+}
+{% endschema %}
